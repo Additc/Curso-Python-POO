@@ -6,27 +6,47 @@ class Persona: # La definición de la clase siempre va en mayúscula
         self.edad=edad
         self.altura=altura
         self.peso=peso
-    #Metodos
+    #Métodos
     def caminar(self)->None:
-        print("Estoy caminando")
+        print(f"{self.nombre} esta caminando para bajar sus {self.peso} kgs.")
 
     def comer(self)->None:
-        print("Estoy comiendo")
+        print(f"{self.nombre} esta comiendo para aumentar su estatura de {self.altura} cm.")
 
     def jugar(self)->None:
-        print("Estoy jugando")
+        print(f"{self.nombre} esta jugando con sus amigos Call of duty.")
 
     def dormir(self)->None:
-        print("Estoy durmiendo")
+        print(f"{self.nombre} esta durmiendo")
 
 if __name__=="__main__":
-    addi=Persona("Addi Chávez",19,1.70,70) #creamos a las persona
+    addi=Persona("Addi",19,1.70,70) #creamos a las persona
 
     #Impimimos sus características y accedemos a los atributos de ese objeto
-    print(addi.nombre)
-    print(addi.edad)
-    print(addi.altura)
-    print(addi.peso)
+    print(f"nombre:{addi.nombre}")
+    print(f"edad:{addi.edad}")
+    print(f"altura:{addi.altura}")
+    print(f"peso:{addi.peso}")
 
     # accedemos a sus métodos
     addi.caminar()
+    addi.comer()
+    addi.jugar()
+    addi.dormir()
+
+    print()
+    #SEGUNDO OBJETO
+    compa=Persona("Alberto",20,1.68,65) # Se utiliza la clase como una plantilla
+    compa.caminar()
+    compa.comer()
+    compa.jugar()
+    compa.dormir()
+    print()
+
+    #modificando edad y peso
+    addi.peso=68.5
+    addi.edad=20
+    addi.caminar()
+    print(addi.nombre) # se imprime el nombre
+    print(f"edad:{addi.edad}")
+    print(f"peso:{addi.peso}")
