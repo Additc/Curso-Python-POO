@@ -21,7 +21,7 @@ class Profesor:
         print(f"EL profesor {self.nombre} domina el tema: {tema}")
 
     def enseniar_tema(self,no_tema:int)->str:
-        if no_tema> len(self.temas_dominados): #Válidamos temas
+        if no_tema < len(self.temas_dominados): #Válidamos temas
             return self.temas_dominados[no_tema]
         else:
             return "Fuera de rango"
@@ -45,3 +45,6 @@ if __name__=="__main__":
     #Ahora para la class profesor
     profesor1=Profesor("Alberto",["matemáticas","Programación"])
     print(profesor1)
+
+    print(profesor1.enseniar_tema(0))
+
