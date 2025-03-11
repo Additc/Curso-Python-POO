@@ -1,3 +1,5 @@
+#Clases
+
 class Estudiante:
     def __init__(self, nombre: str):
         self.nombre = nombre  # Hacemos que forme parte del objeto
@@ -31,6 +33,7 @@ class Profesor:
         return f"Profesor nombre:{self.nombre} Temas dominados: {self.temas_dominados} "
 
 
+#Objetos
 if __name__=="__main__":
     estudiante1=Estudiante("Addi")
     estudiante2=Estudiante("Alberto")
@@ -43,8 +46,12 @@ if __name__=="__main__":
     print()
 
     #Ahora para la class profesor
-    profesor1=Profesor("Alberto",["matemáticas","Programación"])
+    profesor1=Profesor("Alberto",["matemáticas","Programación","Futbol"])
     print(profesor1)
 
     print(profesor1.enseniar_tema(0))
+    print()
+#Relacionando objetos
+    estudiante1.aprender_tema(profesor1.enseniar_tema(1))
+    estudiante2.aprender_tema(profesor1.enseniar_tema(2))
 
