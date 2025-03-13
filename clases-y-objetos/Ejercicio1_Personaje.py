@@ -1,6 +1,6 @@
 """
 Nombre: Addi Toro Chávez.
-Fecha: 12 de Marzo del 2025
+Fecha: 12 de marzo del 2025
 Descripción:
 Ejercicio 1 clase personaje.
 """
@@ -16,7 +16,7 @@ class Personaje:
 
     def __init__(self)->None:
         """
-        Comstructor del Personaje
+        Constructor del Personaje
         """
 
         self.x = x=0
