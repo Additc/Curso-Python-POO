@@ -34,7 +34,7 @@ class Personaje:
                 self.y-=1
             elif i == "d" and self.x < 10:
                 self.x+=1
-            elif i == "i" and self.y > 0:
+            elif i == "i" and self.x > 0:
                 self.x-=1
             else:
                 print("Error movimiento no válido")
@@ -47,12 +47,13 @@ class Personaje:
         return f"Profesor nombre: "
 
 def solicitar_datos( )->str:
+    print()
     print("--Se solicita iterativamente las secuencias de movimiento")
-    movimiento = input("Ingrese las órdenes de movimiento: "). lower()
-    while  movimiento.isnumeric():
+    ordenes = input("Ingrese las órdenes de movimiento: "). lower()
+    while  ordenes.isnumeric():
         print("Opción no válida")
-        movimiento= input("Intenta nuevamente las órdenes de movimiento: ").lower()
-    ordenes = str(movimiento)
+        ordenes= input("Intenta nuevamente las órdenes de movimiento: ").lower()
+    ordenes = str(ordenes)
     print()
     return  ordenes
 
@@ -63,6 +64,11 @@ def solicitar_datos( )->str:
 """ %%%%%%%     CÓDIGO A NIVEL DE MÓDULO    %%%%%%%%%%%%%%%%%%%%% """
 if __name__ == "__main__":
     personaje1=Personaje()
-    ordenes=solicitar_datos()
-    personaje1.moverse(ordenes)
-    personaje1.pocision_actual()
+    while True:
+        ordenes = solicitar_datos()
+        if ordenes == "s":
+            personaje1.pocision_actual()
+            print("Fin del programa.")
+            break
+        personaje1.moverse(ordenes)
+        personaje1.pocision_actual()
