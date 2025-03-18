@@ -36,8 +36,7 @@ class Personaje:
                 self.x+=1
             elif i == "i" and self.x > 0:
                 self.x-=1
-            else:
-                print("Error movimiento no válido")
+
 
 
     def pocision_actual(self)->None:
