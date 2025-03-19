@@ -1,4 +1,9 @@
-#Clases
+"""
+Nombre: Addi Toro Chávez.
+Fecha: 17 de marzo del 2025
+Descripción:
+Clases
+"""
 
 class Estudiante:
     def __init__(self, nombre: str):

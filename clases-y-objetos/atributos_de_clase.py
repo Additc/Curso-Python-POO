@@ -1,3 +1,11 @@
+"""
+Nombre: Addi Toro Chávez.
+Fecha: 17 de marzo del 2025
+Descripción:
+Atributos de clase
+"""
+
+
 class Empleado:
     #Una variable de clase/ o variable de global siempre va en esta parte
     no_id=1
