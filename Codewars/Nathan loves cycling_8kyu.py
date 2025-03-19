@@ -8,6 +8,11 @@ You get given the time in hours and you need to return the number of litres Nath
 
 
 def litres(time):
+    """
+    Función que calcula el tiempo en litros que Nathan a consumido.
+    :param time: Tiempo el que a practicado ciclismo.
+    :return: Cantidad de litros en entero que a bebido.
+    """
     litros=0.5*time
     return int(litros)
 
