@@ -40,8 +40,8 @@ class Empresa:
         Se utiliza para remover un empleado de la empresa.
         :param empleados_a_remover: Empleado a remover de la empresa.
         """
-        for empleado in empleados_a_remover:
-            if empleado in self.empleados:
+        for empleado in empleados_a_remover: #Aquí emplado a remover es una tupla.
+            if empleado in self.empleados: #Si el empleado esta dentro de la lista, remueve el empleado.
                 self.empleados.remove(empleado)
 
             else:
@@ -70,16 +70,20 @@ class Empresa:
 
 
 if __name__ == '__main__':
-    empleado1=Empleado("Addi",250)
-    empleado2=Empleado("Alberto",250)
-    print(empleado1)
-    print(empleado2)
+    addi=Empleado("Addi",250)
+    alberto=Empleado("Alberto",250)
+    print(addi)
+    print(alberto)
     print()
 
     #Crear clase empresa, dandole un nombre y empleados
-    unsij=Empresa("unsij",empleado1)
+    unsij=Empresa("unsij",addi)
 
     #Agregar métodos a otra clase
-    unsij.agregar_empleados(empleado1,empleado2)
+    unsij.agregar_empleados(addi,alberto)
     print(unsij)
+    print()
 
+    addi.nombre = "paps"
+    print(addi)
+    print(addi.nombre)
