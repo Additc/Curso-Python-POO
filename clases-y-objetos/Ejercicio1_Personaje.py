@@ -27,6 +27,9 @@ class Personaje:
         Personaje.contador_id += 1
 
     def moverse(self,ordenes:str)->None:
+        """
+        Función que verifica los movimientos del personaje.
+        """
         for i in ordenes:
             if i == "a" and self.y < 10:
                 self.y+=1
@@ -40,12 +43,18 @@ class Personaje:
 
 
     def pocision_actual(self)->None:
+        """
+        Función que muestra la pocisión actual del personaje.
+        """
         print(f"pocisión actual del personaje {self.id_personaje}: (x,y): ({self.x, self.y})")
 
     def __str__(self) -> str:
         return f"Profesor nombre: "
 
 def solicitar_datos( )->str:
+    """
+    Función que solicita los movimientos al usuario.
+    """
     print()
     print("--Se solicita iterativamente las secuencias de movimiento")
     ordenes = input("Ingrese las órdenes de movimiento: "). lower()
