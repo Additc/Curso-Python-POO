@@ -12,7 +12,6 @@ Si las variables no son números o el signo no pertenece a la lista anterior, se
 
 def calculator(num1, num2, operacion):
     """
-
     Función que calcula una operación aritmética de dos números si estos si lo son,según sea el signo,en dado caso que no
     sea uno de los predefinidos regresa valor desconocido.
     """
