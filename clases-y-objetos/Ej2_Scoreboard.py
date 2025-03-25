@@ -6,7 +6,7 @@ Ejercicio 2 Scoreboard
 """
 
 class ScoreBoard:
-    def __init__(self,points:int=0,text_color:tuple[int]=(0,0,0), font:str="Kimono",size:float=0):
+    def __init__(self,points:int=0,text_color:tuple[int,int,int]=(0,0,0), font:str="Kimono",size:float=0):
         self._points=points
         self._text_color= text_color
         self._font=font
@@ -59,7 +59,8 @@ class ScoreBoard:
         self._size = size
 
     def __str__(self) -> str:
-        pass
+        return f"Scoreboard(Points: {self._points}, Text color:{self._text_color}, Front:{self._font}, Size:{self._size})"
+
 
 if __name__ == '__main__':
     # Se crean objetos de la clase y se imprime.
