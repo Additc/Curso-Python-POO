@@ -6,10 +6,10 @@ Ejercicio 2 Scoreboard
 """
 
 class ScoreBoard:
-    def __init__(self,points:int=0,text_color:tuple[int]=(0,0,0), front:str="Kimono",size:float=0):
+    def __init__(self,points:int=0,text_color:tuple[int]=(0,0,0), font:str="Kimono",size:float=0):
         self._points=points
         self._text_color= text_color
-        self._front=front
+        self._font=font
         self._size=size
 
 
@@ -40,13 +40,13 @@ class ScoreBoard:
 
     # Metodo de acceso get para el front
     @property
-    def fronts(self) -> str:
-        return self._front
+    def fonts(self) -> str:
+        return self._font
 
-    # Metodo de acceso set para el front
-    @fronts.setter
-    def fronts(self, front: str) -> None:
-        self._front = front
+    # Metodo de acceso set para el font
+    @fonts.setter
+    def fonts(self, font: str) -> None:
+        self._font = font
 
     # Metodo de acceso get para el front
     @property
