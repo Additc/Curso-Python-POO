@@ -2,7 +2,7 @@
 Nombre: Addi Toro Chávez.
 Fecha: 17 de marzo del 2025
 Descripción:
-Ejercicio 2 Scoreboard
+Ejercicio 2 Scoreboard.
 """
 
 class ScoreBoard:
