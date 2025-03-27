@@ -12,10 +12,6 @@ class ScoreBoard:
         self._font=font
         self._size=size
 
-
-    def draw(self)->None:
-        pass
-
     # Metodo de acceso get para los puntos
 
     @property
@@ -57,6 +53,11 @@ class ScoreBoard:
     @sizes.setter
     def sizes(self, size: float) -> None:
         self._size = size
+
+
+    def draw(self)->None:
+        print(f"Score={self._points}")
+
 
     def __str__(self) -> str:
         return f"Scoreboard(Points: {self._points}, Text color:{self._text_color}, Front:{self._font}, Size:{self._size})"

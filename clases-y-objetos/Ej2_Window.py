@@ -14,12 +14,6 @@ class Window:
         self._heigth=heigth
         self._scoreboard=scoreboard
 
-    def draw_scoreboard(self)->None:
-        pass
-
-    def update_score(self,points:int)->None:
-        pass
-
     # Metodo de acceso get title
     @property
     def titles(self) -> str:
@@ -60,6 +54,12 @@ class Window:
     def score(self, scoreboard) -> None:
         self._scoreboard = scoreboard
 
+    def draw_scoreboard(self)->None:
+        self._scoreboard.draw()
+
+    def update_score(self,points:int)->None:
+        self._scoreboard._points=points
+
     def __str__(self) -> str:
         return f"Scoreboard(Title: {self._title}, Width:{self._width}, Heigth:{self._heigth}, Scoreboard:{self._scoreboard})"
 
@@ -79,6 +79,7 @@ if __name__ == '__main__':
     print()
     print("Método para actualizar el scoreboard:")
     buscaminas.update_score(1)
+    buscaminas.draw_scoreboard()
 
     # Se crean objetos de ambas clases y se prueban sus métodos.
     print()
@@ -97,6 +98,7 @@ if __name__ == '__main__':
     print()
     print("Método para actualizar el scoreboard:")
     solitario.update_score(11)
+    solitario.draw_scoreboard()
 
     # Se modifican los atributos mediante los métodos de acceso.
     print()
