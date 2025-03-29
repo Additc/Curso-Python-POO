@@ -1,6 +1,6 @@
 """
 Nombre: Addi Toro Chávez.
-Fecha: 127 de marzo del 2025
+Fecha: 27 de marzo del 2025
 Descripción:
 Dado un número aleatorio no negativo,
 debes devolver los dígitos de este número dentro de una matriz en orden inverso.
