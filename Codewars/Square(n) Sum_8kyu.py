@@ -7,7 +7,8 @@ Ejercicio de una suma de números dados con exponenciación.
 
 def square_sum(numbers):
     """
-    Función que recibe una lista de números y realiza la suma de cada uno de ellos elevandos al cuadrado.
+    Función que recibe una lista de números y realiza la suma de cada uno de ellos
+    elevados al cuadrado.
     :param numbers: Lista de números.
     :return: El total de la suma.
     """

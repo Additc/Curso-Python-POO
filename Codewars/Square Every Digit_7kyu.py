@@ -17,6 +17,8 @@ def square_digits(num):
         resultado += str(int(digito) ** 2)  # Elevar al cuadrado y añadir al resultado
     return int(resultado)  # Convertir el resultado concatenado a un número
 
+
+""" %%%%%%%     CÓDIGO A NIVEL DE MÓDULO    %%%%%%%%%%%%%%%%%%%%% """
 if __name__ == '__main__':
     print(square_digits(9119))
     print(square_digits(0))

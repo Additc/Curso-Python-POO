@@ -36,6 +36,8 @@ def calculator(num1, num2, operacion):
             return "No se puede dividir entre cero"
         return num1 / num2
 
+
+""" %%%%%%%     CÓDIGO A NIVEL DE MÓDULO    %%%%%%%%%%%%%%%%%%%%% """
 if __name__ == '__main__':
     print(calculator(6, 2, '+'))
     print(calculator(4,3,"-"))

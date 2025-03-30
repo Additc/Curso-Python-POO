@@ -22,6 +22,7 @@ def find_average(numbers):
         total = suma / len(numbers)
         return total
 
+""" %%%%%%%     CÓDIGO A NIVEL DE MÓDULO    %%%%%%%%%%%%%%%%%%%%% """
 if __name__ == '__main__':
     print(find_average([1,2,3]))
     print(find_average([]))

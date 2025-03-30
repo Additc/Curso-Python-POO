@@ -18,6 +18,8 @@ def remove_char(cadena:str)->str:
     """
     return cadena[1:-1]
 
+
+""" %%%%%%%     CÓDIGO A NIVEL DE MÓDULO    %%%%%%%%%%%%%%%%%%%%% """
 if __name__ == '__main__':
     print(remove_char("eloquent"))
     print(remove_char("country"))

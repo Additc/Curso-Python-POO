@@ -18,6 +18,8 @@ def better_than_average(class_points, your_points):
     :return: True en caso de que el puntaje personal es mayor al de la clase o en caso contrario false.
     """
     total=0
+
+    #Proceso para calcular el promedio de la clase
     for i in class_points:
         total+=i
     promedio=total/len(class_points)

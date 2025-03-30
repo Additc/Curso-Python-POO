@@ -10,6 +10,8 @@ def get_zodiac_sign(dia, mes):
     """
     Función que retorna el signo zodiacal, de acuerdo al mes y al día ingresados.
     """
+
+    #Se estbalecen las condiciones del día y mes para cada signo zodiacal.
     if (mes == 3 and dia >= 21) or (mes == 4 and dia <= 19):
         return "Aries"
     elif (mes == 4 and dia >= 20) or (mes == 5 and dia <= 20):

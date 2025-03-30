@@ -9,7 +9,7 @@ Ejemplos (entrada->salida):
 
 def number_to_string(num):
     """
-    Función que convierte un número a cadena
+    Función que convierte un número a cadena con la instrucción str.
     """
     cadena=str(num)
     return cadena

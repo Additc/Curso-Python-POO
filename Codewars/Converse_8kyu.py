@@ -22,6 +22,7 @@ def digitize(n):
 
 
 
+""" %%%%%%%     CÓDIGO A NIVEL DE MÓDULO    %%%%%%%%%%%%%%%%%%%%% """
 if __name__ == '__main__':
     print(digitize(35231))
     print(digitize(0))
