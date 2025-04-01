@@ -46,8 +46,17 @@ class Jugador:
         self._goles = goles
 
 
-    def anotar_goles(self)->None:
-        pass
+    def anotar_goles(self,no_goles:int)->None:
+        self._goles+=no_goles
+
 
     def __str__(self) -> str:
-        pass
+        return f"Jugador( Nombre: {self._nombre} |, Número: {self._numero:}|, Goles anotados: {self._goles}|)"
+
+if __name__ == '__main__':
+    messi=Jugador("Messi",10,845)
+    print(messi)
+    messi.anotar_goles(5)
+    print(messi)
+    messi.anotar_goles(5)
+    print(messi)

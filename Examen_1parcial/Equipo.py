@@ -11,7 +11,7 @@ class Equipo:
     no_id = 1
     def __init__(self,nombre:str,*jugadores:tuple[Jugador]):
         self._nombre=nombre
-        self._jugadores=jugadores
+        self._jugadores=list(jugadores)
         self._id_equipo = Equipo.no_id
         Equipo.no_id += 1
 
@@ -27,13 +27,13 @@ class Equipo:
 
     # Metodo de acceso get para los jugadores
     @property
-    def players(self) ->tuple:
+    def players(self) ->list:
         return self._jugadores
 
     #Metodo de acceso set para los jugadores
     @players.setter
     def players(self, jugadores:tuple[Jugador]) -> None:
-        self._jugadores = jugadores
+        self._jugadores = list(jugadores)
 
     # Metodo de acceso get para id de equipos
     @property
@@ -42,11 +42,12 @@ class Equipo:
 
     # Metodo de acceso set para id de equipos
     @ids.setter
-    def ids(self, id:int) -> None:
-        self._id_equipo= id
+    def ids(self,no_id:int) -> None:
+        self._id_equipo=no_id
 
     def agregar_jugadores(self,*jugadores:tuple[Jugador])->None:
-        pass
+        for jugador in jugadores:
+            self._jugadores.append(jugador)
 
     def remover_jugadores(self,*jugadores:tuple[Jugador])->None:
         pass
@@ -58,5 +59,10 @@ class Equipo:
         pass
 
     def __str__(self) -> str:
-        pass
+        return f"Equipo( Nombre: {self._nombre} | Número de equipo: {self._id_equipo} | Jugadores: {self._jugadores:})"
 
+if __name__ == '__main__':
+    juan=Jugador("juancamanaey",00)
+    lobeto=Jugador("botsito32",10)
+    cefor=Equipo("Cefor",[])
+    print(cefor)

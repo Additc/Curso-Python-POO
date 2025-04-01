@@ -34,7 +34,8 @@ class Torneo:
         self._equipos = list(equipos)
 
     def agregar_equipos(self,*equipos:tuple[Equipo])->None:
-        pass
+        for equipo in equipos:
+            self._equipos.append(equipo)
 
     def remover_equipos(self,*jugadores:tuple[Equipo])->None:
         pass
