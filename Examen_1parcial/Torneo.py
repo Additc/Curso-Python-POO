@@ -9,7 +9,7 @@ from Jugador import Jugador
 
 
 class Torneo:
-    def __init__(self,nombre:str,*equipos:tuple[Equipo]):
+    def __init__(self,nombre:str,*equipos:Equipo):
         self._nombre=nombre
         self._equipos=list(equipos)
 
@@ -30,15 +30,23 @@ class Torneo:
 
     #Metodo de acceso set para equipos
     @equipo.setter
-    def equipo(self, *equipos:tuple[Equipo]) -> None:
+    def equipo(self, *equipos:Equipo) -> None:
         self._equipos = list(equipos)
 
-    def agregar_equipos(self,*equipos:tuple[Equipo])->None:
+    def agregar_equipos(self,*equipos:Equipo)->None:
         for equipo in equipos:
-            self._equipos.append(equipo)
+            if  equipo._nombre not in self._equipos:
+                self._equipos.append(equipo)
+            else:
+                print("El jugador ya tiene equipo")
 
-    def remover_equipos(self,*jugadores:tuple[Equipo])->None:
-        pass
+    def remover_equipos(self,*equipos:Equipo)->None:
+        for equipo in equipos:
+            if equipo._nombre in self._equipos:
+                self._equipos.remove(equipo)
+                print(f" Se eliminó al equipo: {equipo._nombre} correctamente.")
+            else:
+                print(f"El equipo no existe")
 
     def mostrar_equipos(self)-> None:
         pass

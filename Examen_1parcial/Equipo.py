@@ -17,7 +17,7 @@ class Equipo:
         self._id_equipo = Equipo.no_id
         Equipo.no_id += 1
 
-#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     #Metodo de acceso get para nombre de equipos
     @property
     def equipos(self) ->str:
@@ -52,7 +52,7 @@ class Equipo:
 
     def remover_jugadores(self,*jugadores:Jugador)->None:
         for jugador in jugadores:
-            if jugador in self._jugadores:
+            if jugador.nombres in self._jugadores:
                 self._jugadores.remove(jugador)
                 print(f" Se eliminó al jugador: {jugador.nombres} correctamente.")
             else:
