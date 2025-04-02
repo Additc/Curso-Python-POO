@@ -12,7 +12,6 @@ class Jugador:
         self._goles=goles
 
     # Metodo de acceso get para los nombres
-
     @property
     def nombres(self) -> str:
         return self._nombre
@@ -24,7 +23,6 @@ class Jugador:
 
 
     # Metodo de acceso get para número del jugador
-
     @property
     def numeros(self) -> int:
         return self._numero
@@ -35,7 +33,6 @@ class Jugador:
         self._numero = numero
 
     # Metodo de acceso get para los goles
-
     @property
     def goals(self) -> int:
         return self._goles
