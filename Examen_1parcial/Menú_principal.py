@@ -43,6 +43,7 @@ if __name__ == '__main__':
     nuevos_jugadores=[]
     nuevos_equipos=[]
     torneo = Torneo("Champions League")
+    print(f"Torneo: {torneo._nombre}")
     salir = 1
     while salir != 0:
         print()
@@ -128,39 +129,43 @@ if __name__ == '__main__':
                     print(f"{i + 1}.{equipos}")
                 print()
 
-                while True:
-                    #Solicitud y validación de índice del equipo a ingresar jugadores
-                    in_equipo=input("Ingrese el índice del equipo al que desea mover sus jugadores:")
-                    while not in_equipo.isnumeric():
-                        print("Error")
-                        in_equipo=input("Ingrese nuevamente el índice del equipo que desea ingresar sus jugadores : ")
-                    in_equipo=int(in_equipo)-1
-                    if in_equipo<0 or in_equipo>= len(nuevos_equipos):
-                        print("Fuera de rango")
-                        break
-                    else:
-                        #Obtener el equipo solicitado
-                        equipo=nuevos_equipos[in_equipo]
+                #Solicitud y validación de índice del equipo a ingresar jugadores
+                in_equipo=input("Ingrese el índice del equipo al que desea mover sus jugadores:")
+                while not in_equipo.isnumeric():
+                    print("Error")
+                    in_equipo=input("Ingrese nuevamente el índice del equipo que desea ingresar sus jugadores : ")
+                in_equipo=int(in_equipo)-1
+                if in_equipo<0 or in_equipo>= len(nuevos_equipos):
+                    print("Fuera de rango")
+                    break
+                else:
+                    #Obtener el equipo solicitado
+                    equipo=nuevos_equipos[in_equipo]
 
                     #Validación de jugadores existentes
-                    if len(nuevos_jugadores)==0:
-                        print("No hay jugadores para agregar")
-                    else:
-                        # Solicitud y validación de índice de los jugadores a ingresar en un equipo
-                        print("Selecciona los indices de los jugadores que quiere agregar ejemplo (1,2): ")
-                        ind_jugador=input("Ingrese los índices:")
-                        indices=ind_jugador.split(",")
+            if len(nuevos_jugadores)==0:
+                print("No hay jugadores para agregar")
+            else:
+                 # Solicitud y validación de índice de los jugadores a ingresar en un equipo
+                print("Selecciona los indices de los jugadores que quiere agregar ejemplo (1,2) ")
+                ind_jugador=input("Ingrese los índices:")
+                indices=ind_jugador.split(",")
 
-                        #Lista para almacenar los jugadores ingresados
-                        jugadores_a_agregar=[]
-                        for indice in indices:
-                            #Convertir índice a entero y ajustar el índice 
-                            numero_jugador=int(indice.strip())-1
-                            if numero_jugador>=0 and numero_jugador<len(nuevos_jugadores):
-                                jugadores_a_agregar.append(nuevos_jugadores[numero_jugador])
-                            else:
-                                print("índice no válido")
+
+                #Lista para almacenar los jugadores ingresados
+                jugadores_a_agregar=[]
+                for indice in indices:
+                    if indice.isnumeric():
+                        #Convertir índice a entero y ajustar el índice
+                        numero_jugador=int(indice.strip())-1
+                        if numero_jugador>=0 and numero_jugador<len(nuevos_jugadores):
+                            jugadores_a_agregar.append(nuevos_jugadores[numero_jugador])
+                        else:
+                            print("índice no válido")
+                        #Accede al equipo y agrega los jugadores con el métod0
                         equipo.agregar_jugadores(*jugadores_a_agregar)
+                    else:
+                        print("Error índice no válido")
 
         elif opciones == 6:
             # Verificación de equipos disponibles
@@ -171,10 +176,9 @@ if __name__ == '__main__':
                 print("Equipos disponibles:")
                 # Mostrar los equipos disponibles
                 for i, equipo in enumerate(nuevos_equipos):
-                    print(f"{i + 1}. {equipo._nombre}")  #'nombre' esté definido en la clase 'Equipo'
+                    print(f"{i + 1}. {equipo._nombre}")
 
                 print()
-            while True:
                 # Seleccionar el equipo
                 in_equipo = input("Ingrese el índice del equipo al que desea eliminar sus jugadores: ")
 
@@ -201,6 +205,7 @@ if __name__ == '__main__':
                     ind = input("Seleccione el índice del jugador (o múltiples índices separados por coma): ")
                     id_jugadores = ind.split(",")  # Permitir múltiples índices
 
+                    #Almacena jugadores a eliminar
                     jugadores_a_eliminar = []
                     for indice in id_jugadores:
                         try:
@@ -249,7 +254,7 @@ if __name__ == '__main__':
                     torneo.agregar_equipos(*equipo_a_agregar)
 
             # Mostrar los equipos en el torneo después de agregar uno
-            print("Equipos del Torneo:")
+            print(f"Equipos del Torneo {torneo._nombre}:")
             torneo.mostrar_equipos()
 
         elif opciones == 8:
@@ -281,9 +286,11 @@ if __name__ == '__main__':
 
 
         elif opciones == 9:
+            #Validación de que existen jugadores
             if len(nuevos_jugadores)==0:
                 print("No existen jugadores")
             else:
+                #Mostrar jugadores
                 print("Jugadores disponibles:")
                 for i, jugador in enumerate(nuevos_jugadores):
                     print(f"{i + 1}.{jugador}")
@@ -297,12 +304,14 @@ if __name__ == '__main__':
                 if in_jugador < 0 or in_jugador >= len(nuevos_jugadores):
                     print("Índice fuera de rango.")
                 else:
+                    #Asignación y validación del número de goles
                     goles=input("Ingrese goles anotados: ")
                     while not goles.isnumeric():
                         print("Error: Ingrese un índice numérico válido.")
                         goles = input("Ingrese nuevamente el índice de equipo: ")
                     goles = int(goles)
 
+                    #Incrementar goles al jugador con el métod0 anotar goles
                     nuevos_jugadores[in_jugador].anotar_goles(goles)
 
         elif opciones == 10:
@@ -333,7 +342,7 @@ if __name__ == '__main__':
                     # Seleccionar el equipo
                     equipo_seleccionado = nuevos_equipos[in_equipo]
 
-                    # Llamar al metodo total_goles() del equipo seleccionado
+                    # Llamar al métod0 total_goles() del equipo seleccionado
                     total_goles_equipo = equipo_seleccionado.total_goles()  # Asumimos que total_goles devuelve el número de goles
                     print(f"El total de goles del equipo {equipo_seleccionado._nombre} es: {total_goles_equipo}")
 
