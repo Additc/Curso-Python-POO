@@ -5,12 +5,15 @@ Descripción:
 Clase jugador
 """
 
+""" %%%%%%%%%%%%%%%%     CLASE    %%%%%%%%%%%%%%%%%%%%% """
 class Jugador:
+    #Constructor de la clase jugador
     def __init__(self,nombre:str,numero:int,goles:int=0):
         self._nombre=nombre
         self._numero=numero
         self._goles=goles
 
+# %%%%%%%%%%%%%%%  MÉTODOS DE ACCESO  %%%%%%%%%%%%%%%%%%
     # Metodo de acceso get para los nombres
     @property
     def nombres(self) -> str:
@@ -42,12 +45,18 @@ class Jugador:
     def goals(self, goles:int) -> None:
         self._goles = goles
 
-
+#%%%%%%%%%%%%%%%%%%%%  MÉTODOS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     def anotar_goles(self,no_goles:int)->None:
+        """
+        Función que incrementar la cantidad de goles anotados.
+        """
         self._goles+=no_goles
 
 
     def __str__(self) -> str:
+        """
+        Métod0  mágico que muestra la información de la clase personaje.
+        """
         return f"Jugador( Nombre: {self._nombre} |, Número: {self._numero:}|, Goles anotados: {self._goles}|)"
 
 if __name__ == '__main__':
