@@ -66,7 +66,7 @@ if __name__ == '__main__':
             # Creación del jugador
             nuevo_jugador=Jugador(nombre,num)
 
-            # Almacenandolo en una nueva lista
+            # Almacenando en una nueva lista
             nuevos_jugadores.append(nuevo_jugador)
             print("Jugador creado con éxito")
             print()
